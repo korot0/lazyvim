@@ -4,3 +4,5 @@
 
 -- Manual signature help
 vim.api.nvim_set_keymap("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+-- Set file explorer to float by default
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree float<cr>", { desc = "File Explorer (float)" })
