@@ -5,7 +5,8 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      local is_mac = vim.fn.has("mac") == 1 or vim.loop.os_uname().sysname == "Darwin"
+      -- Detect macOS
+      local is_mac = vim.fn.has("mac") == 1
       local transparency_file = vim.fn.stdpath("config") .. "/plugin/after/transparency.lua"
 
       if is_mac then
@@ -14,7 +15,7 @@ return {
         return
       end
 
-      -- Otherwise, set up hotreload for other platforms
+      -- Set up hotreload for other platforms
       vim.api.nvim_create_autocmd("User", {
         pattern = "LazyReload",
         callback = function()
@@ -35,13 +36,14 @@ return {
               end
             end
 
+            -- Reset highlights
             vim.cmd("highlight clear")
-            if vim.fn.exists("syntax_on") then
+            if vim.fn.exists("syntax_on") == 1 then
               vim.cmd("syntax reset")
             end
-
             vim.o.background = "dark"
 
+            -- Unload plugin Lua modules
             if theme_plugin_name then
               local plugin = require("lazy.core.config").plugins[theme_plugin_name]
               if plugin then
@@ -53,6 +55,7 @@ return {
               end
             end
 
+            -- Reload LazyVim theme
             for _, spec in ipairs(theme_spec) do
               if spec[1] == "LazyVim/LazyVim" and spec.opts and spec.opts.colorscheme then
                 local colorscheme = spec.opts.colorscheme
@@ -62,6 +65,7 @@ return {
                   pcall(vim.cmd.colorscheme, colorscheme)
                   vim.cmd("redraw!")
 
+                  -- Load transparency if file exists
                   if vim.fn.filereadable(transparency_file) == 1 then
                     vim.defer_fn(function()
                       vim.cmd.source(transparency_file)
