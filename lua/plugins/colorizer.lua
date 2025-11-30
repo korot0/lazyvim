@@ -1,19 +1,11 @@
 return {
-  "NvChad/nvim-colorizer.lua",
-  event = "VeryLazy",
-  config = function()
-    require("colorizer").setup({
-      filetypes = { "*" },
-      user_default_options = {
-        RGB = true,
-        RRGGBB = true,
-        names = true,
-        RRGGBBAA = true,
-        rgb_fn = true,
-        hsl_fn = true,
-        css = true,
-        css_fn = true,
-      },
-    })
-  end,
+  "catgoose/nvim-colorizer.lua",
+  event = "BufReadPre",
+  opts = {
+    filetypes = { "*" },
+    user_default_options = {
+      tailwind = true,
+      names = true, -- CSS named colors
+    },
+  },
 }
