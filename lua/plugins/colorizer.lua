@@ -1,0 +1,11 @@
+return {
+  "catgoose/nvim-colorizer.lua",
+  event = "BufReadPre",
+  opts = {
+    filetypes = { "*" },
+    user_default_options = {
+      tailwind = true,
+      names = true, -- CSS named colors
+    },
+  },
+}
