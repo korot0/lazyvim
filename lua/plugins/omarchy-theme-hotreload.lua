@@ -12,7 +12,7 @@ return {
       if is_mac then
         -- Apply Everforest theme on macOS
         -- vim.cmd.colorscheme("everforest")
-        vim.cmd.colorscheme("everforest")
+        vim.cmd.colorscheme("nord")
         return
       end
 
