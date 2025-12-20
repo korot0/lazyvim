@@ -10,8 +10,7 @@ return {
       local transparency_file = vim.fn.stdpath("config") .. "/plugin/after/transparency.lua"
 
       if is_mac then
-        -- Apply Everforest theme on macOS
-        -- vim.cmd.colorscheme("everforest")
+        vim.g.nord_disable_background = true
         vim.cmd.colorscheme("nord")
         return
       end
