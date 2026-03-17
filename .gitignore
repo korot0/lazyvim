@@ -11,3 +11,4 @@ lua/plugins/theme.lua
 lua/plugins/omarchy-theme-hotreload.lua
 lua/plugins/all-themes.lua
 lua/plugins/colorscheme.lua
+plugin/after/transparency.lua
