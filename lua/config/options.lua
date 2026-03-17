@@ -15,5 +15,6 @@ vim.opt.spelllang = "en_us"
 
 vim.g.root_spec = { "cwd" }
 
+-- Blinking cursor
 vim.opt.guicursor =
-  "n-v-c:block-blinkwait700-blinkon500-blinkoff500,i-ci-ve:ver25-blinkwait700-blinkon500-blinkoff500,r-cr:hor20,o:hor50"
+  "n-v-c:block-blinkwait700-blinkon500-blinkoff500,i-ci-ve:ver25-blinkwait700-blinkon500-blinkoff500,r-cr:hor20,o:hor50,a:blinkwait700-blinkon500-blinkoff500"
