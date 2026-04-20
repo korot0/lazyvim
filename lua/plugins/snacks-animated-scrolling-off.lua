@@ -2,7 +2,6 @@ return {
   "folke/snacks.nvim",
   opts = {
     scroll = {
-<<<<<<< HEAD
       enabled = true,
       animate = {
         duration = {
@@ -19,9 +18,6 @@ return {
         },
         easing = "linear",
       },
-=======
-      enabled = false, -- Disable scrolling animations
->>>>>>> 9a2c5ba7bf9b7a1f7ee6320b17366ebb60a380d8
     },
   },
 }
