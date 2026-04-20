@@ -12,5 +12,5 @@ lua/plugins/omarchy-theme-hotreload.lua
 lua/plugins/all-themes.lua
 lua/plugins/colorscheme.lua
 plugin/after/transparency.lua
-lua/config/options.lua
+# lua/config/options.lua
 .DS_Store
