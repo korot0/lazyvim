@@ -9,3 +9,5 @@ data
 
 # macOS System Files
 .DS_Store
+
+/lua/plugins/colorscheme.lua
